@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio Semanal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header-container">
+    <div class="titulo-cardapio">
+      <h1>Cardápio Semanal</h1>
+      <span>Atualiza toda Terça-feira</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="dias-semana">
+      <button class="btn-dia active" data-dia="terca">Terça</button>
+      <button class="btn-dia" data-dia="quarta">Quarta</button>
+      <button class="btn-dia" data-dia="quinta">Quinta</button>
+      <button class="btn-dia" data-dia="sexta">Sexta</button>
+      <button class="btn-dia" data-dia="sabado">Sábado</button>
+      <button class="btn-dia" data-dia="domingo">Domingo</button>
+    </nav>
+
+    <div class="conteudo">
+      <section id="cardapio" class="grid-cardapio"></section>
+    </div>
+
+    <a href="index.html" class="voltar">Voltar ao início</a>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
