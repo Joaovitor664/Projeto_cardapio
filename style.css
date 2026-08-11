@@ -5,29 +5,14 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-  background-color: #f4f4f9;
-  color: #7e7e7e;
-  line-height: 1.6;
-}
-
 .container {
   max-width: 1100px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-.header-container {
-  background-color: #004c99;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-}
-
 .titulo-cardapio {
   text-align: center;
-  color: white;
 }
 
 .titulo-cardapio h1 {

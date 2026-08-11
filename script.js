@@ -22,7 +22,12 @@ const cardapioSemanal = {
   domingo: [
     { id: 601, nome: "Opção 1: Frango Assado de Televisão", preco: 30.00, desc: "Acompanha farofa de miúdos e batatas coradas." },
     { id: 602, nome: "Opção 2: Lasanha à Bolonhesa", preco: 32.00, desc: "Massa artesanal intercalada com molho caseiro e queijo." }
-  ]
+  ],
+  segunda: [
+    { id: 701, nome: "Opção 1: Virado à Paulista", preco: 26.00, desc: "Acompanha arroz, tutú de feijão, couve refogada e bisteca." },
+    { id: 702, nome: "Opção 2: Frango Xadrez", preco: 24.00, desc: "Acompanha arroz branco e salada de pimentões com legumes." }
+  ],
+    
 };
 
 let carrinho = [];
@@ -134,4 +139,3 @@ if (document.readyState === "loading") {
 } else {
   iniciarCarrossel();
 }
-
