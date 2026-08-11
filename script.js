@@ -27,13 +27,13 @@ const cardapioSemanal = {
 
 let carrinho = [];
 
-// Elementos do DOM
+
 const containerCardapio = document.getElementById("cardapio");
 const containerCarrinho = document.getElementById("itens-carrinho");
 const totalElemento = document.getElementById("total-valor");
 const botoesDia = document.querySelectorAll(".btn-dia");
 
-// Lógica de Renderização do Cardápio
+
 function exibirPratosDoDia(dia) {
   if (!containerCardapio) return;
 
@@ -99,7 +99,7 @@ if (containerCardapio) {
   exibirPratosDoDia("terca");
 }
 
-// --- Lógica do Carrossel Automático ---
+
 let slideIndex = 0;
 let carouselInterval = null;
 

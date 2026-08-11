@@ -137,7 +137,6 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Camada escura por cima da imagem para dar leitura ao texto */
 .carousel-slide::before {
   content: "";
   position: absolute;
