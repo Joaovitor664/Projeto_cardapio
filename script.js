@@ -73,33 +73,6 @@ if (botoesDia.length > 0) {
   });
 }
 
-function adicionarAoCarrinho(dia, id) {
-  const pratoEncontrado = cardapioSemanal[dia].find(p => p.id === id);
-  if (pratoEncontrado) {
-    carrinho.push(pratoEncontrado);
-    atualizarCarrinho();
-  }
-}
-
-function atualizarCarrinho() {
-  if (!containerCarrinho || !totalElemento) return;
-
-  containerCarrinho.innerHTML = "";
-  let total = 0;
-
-  carrinho.forEach(item => {
-    total += item.preco;
-    const li = document.createElement("li");
-    li.innerHTML = `
-      ${item.nome}
-      R$ ${item.preco.toFixed(2).replace('.', ',')}
-    `;
-    containerCarrinho.appendChild(li);
-  });
-
-  totalElemento.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
-}
-
 if (containerCardapio) {
   exibirPratosDoDia("terca");
 }
