@@ -274,3 +274,47 @@
   }
 }
 
+.banner-carousel {
+  position: relative;
+}
+
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-prev {
+  left: 20px;
+}
+
+.carousel-next {
+  right: 20px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background-color: rgba(246, 190, 0, 0.8);
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .carousel-prev,
+  .carousel-next {
+    padding: 10px 15px;
+    font-size: 18px;
+    left: 10px;
+    right: 10px;
+  }
+}

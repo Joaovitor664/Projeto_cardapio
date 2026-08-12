@@ -55,6 +55,7 @@ function exibirPratosDoDia(dia) {
       </div>
       <div>
         <div class="preco">R$ ${prato.preco.toFixed(2).replace('.', ',')}</div>
+        <div class="acoes">
       </div>
     `;
     containerCardapio.appendChild(card);
@@ -81,30 +82,62 @@ if (containerCardapio) {
 let slideIndex = 0;
 let carouselInterval = null;
 
-function alternarSlides() {
+function mostrarSlide(n) {
   const slides = document.querySelectorAll(".carousel-slide");
-
+  
   if (slides.length === 0) return;
 
-  slides.forEach(slide => slide.classList.remove("active"));
-
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
+  if (n >= slides.length) {
+    slideIndex = 0;
+  }
+  if (n < 0) {
+    slideIndex = slides.length - 1;
   }
 
-  slides[slideIndex - 1].classList.add("active");
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[slideIndex].classList.add("active");
+}
+
+window.avancarSlide = function() {
+  resetarTemporizador();
+  slideIndex++;
+  mostrarSlide(slideIndex);
+};
+
+window.voltarSlide = function() {
+  resetarTemporizador();
+  slideIndex--;
+  mostrarSlide(slideIndex);
+};
+
+function cicloAutomatico() {
+  slideIndex++;
+  mostrarSlide(slideIndex);
+}
+
+function iniciarTemporizador() {
+  if (carouselInterval) clearInterval(carouselInterval);
+  carouselInterval = setInterval(cicloAutomatico, 5000);
+}
+
+function resetarTemporizador() {
+  clearInterval(carouselInterval);
+  iniciarTemporizador();
 }
 
 function iniciarCarrossel() {
   const slides = document.querySelectorAll(".carousel-slide");
   if (slides.length > 0) {
     slideIndex = 0;
-    alternarSlides();
-
-    if (carouselInterval) clearInterval(carouselInterval);
-    carouselInterval = setInterval(alternarSlides, 4000);
+    mostrarSlide(slideIndex);
+    iniciarTemporizador();
   }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", iniciarCarrossel);
+} else {
+  iniciarCarrossel();
 }
 
 if (document.readyState === "loading") {
